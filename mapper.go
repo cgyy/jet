@@ -71,6 +71,8 @@ func setValue(i interface{}, v reflect.Value) {
 		default:
 			v.Set(reflect.ValueOf(i))
 		}
+	case int64, int32, int:
+		v.SetInt(i.(int64))
 	default:
 		v.Set(reflect.ValueOf(i))
 	}

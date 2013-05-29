@@ -12,6 +12,10 @@ func Open(driverName, dataSourceName string) (Db, error) {
 	return &db{db: db2}, nil
 }
 
+func New(db2 *sql.DB) Db {
+	return &db{db: db2}
+}
+
 type db struct {
 	runner
 	db *sql.DB

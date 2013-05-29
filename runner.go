@@ -31,11 +31,11 @@ func (r *runner) Rows(v interface{}, maxRows ...int64) error {
 		max = maxRows[0]
 	}
 	// Convert hstore query
-	query, args := substituteMapAndArrayMarks(r.query, r.args...)
+	//query, args := substituteMapAndArrayMarks(r.query, r.args...)
 	// Log
-	r.logQuery(query, args)
+	//r.logQuery(query, args)
 	// Query
-	rows, err := r.qo.Query(query, args...)
+	rows, err := r.qo.Query(r.query, r.args...)
 	if err != nil {
 		return err
 	}
